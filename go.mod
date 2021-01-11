@@ -1,4 +1,4 @@
-module github.com/openopsdev/go-cobra-commons
+module github.com/openopsdev/go-cli-commons
 
 go 1.15
 
