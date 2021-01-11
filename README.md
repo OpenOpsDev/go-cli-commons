@@ -1,2 +1,3 @@
-# go-cobra-commons
-Cobra CLI Tool Common Utility Methods
+# go-cli-commons
+
+CLI Tool Common Utility Methods (currently we use cobra framework)
