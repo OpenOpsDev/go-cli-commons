@@ -21,7 +21,7 @@ func (m *MultiInput) Run() (string, error) {
 		Label: m.Label,
 		Validate: func(input string) error {
 			if matched, err := regexp.Match(m.ValidString, []byte(input)); err != nil || !matched {
-				return errors.New("not a valid string")
+				return errors.New("not a valid input")
 			}
 
 			return nil
@@ -41,7 +41,7 @@ func (m *MultiInput) Run() (string, error) {
 			Label: "Add more? [Y",
 			Items: []string{"yes", "no"},
 		}
-		confirm, err := add.Run()
+		_, confirm, err := add.Run()
 		if err != nil {
 			return "", err
 		}
