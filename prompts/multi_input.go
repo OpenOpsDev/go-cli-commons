@@ -20,8 +20,10 @@ func (m *MultiInput) Run() (string, error) {
 	prompt := promptui.Prompt{
 		Label: m.Label,
 		Validate: func(input string) error {
-			if matched, err := regexp.Match(m.ValidString, []byte(input)); err != nil || !matched {
-				return errors.New("not a valid input")
+			if len(m.ValidString) > 0 {
+				if matched, err := regexp.Match(m.ValidString, []byte(input)); err != nil || !matched {
+					return errors.New("not a valid input")
+				}
 			}
 
 			return nil
