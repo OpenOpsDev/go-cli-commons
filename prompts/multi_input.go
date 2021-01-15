@@ -40,8 +40,8 @@ func (m *MultiInput) Run() (string, error) {
 		answers = append(answers, result)
 
 		add := promptui.Select{
-			Label: "Add more? [Y",
-			Items: []string{"yes", "no"},
+			Label: "Add more?",
+			Items: []string{"no", "yes"},
 		}
 		_, confirm, err := add.Run()
 		if err != nil {
