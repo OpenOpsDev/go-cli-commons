@@ -4,8 +4,8 @@ go 1.15
 
 require (
 	github.com/aymerick/raymond v2.0.2+incompatible
-	github.com/buger/goterm v0.0.0-20200322175922-2f3e71b85129
+	github.com/gookit/color v1.3.6
 	github.com/manifoldco/promptui v0.8.0
-	golang.org/x/lint v0.0.0-20201208152925-83fdc39ff7b5 // indirect
-	golang.org/x/tools v0.0.0-20210115202250-e0d201561e39 // indirect
+	golang.org/x/sys v0.0.0-20200930185726-fdedc70b468f // indirect
+	gopkg.in/yaml.v2 v2.4.0 // indirect
 )

@@ -23,7 +23,7 @@ func (p Prompts) Run() Answers {
 	for key, input := range p {
 		a, err := input.Run()
 		if err != nil {
-			fmt.Errorf("error with prompt: ", err)
+			log.Errorf("error with prompt: %v", err)
 			os.Exit(1)
 		}
 		answers[key] = a

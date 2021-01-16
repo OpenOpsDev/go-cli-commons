@@ -1,21 +1,28 @@
 package logger
 
 import (
-	tm "github.com/buger/goterm"
+	"fmt"
+
+	"github.com/gookit/color"
 )
 
 func Info(s string) {
-	tm.Println(tm.Color(tm.Bold(s), tm.BLUE))
+	fmt.Println(color.Blue.Sprint(s))
 }
 
 func Warning(s string) {
-	tm.Println(tm.Color(tm.Bold(s), tm.YELLOW))
+	fmt.Println(color.Yellow.Sprint(s))
 }
 
 func Success(s string) {
-	tm.Println(tm.Color(tm.Bold(s), tm.GREEN))
+	fmt.Println(color.Green.Sprint(s))
 }
 
 func Error(s string) {
-	tm.Println(tm.Color(tm.Bold(s), tm.RED))
+	fmt.Println(color.Red.Sprint(s))
+}
+
+func Fatal(s string) {
+	Error(s)
+	os.Exit(1)
 }
