@@ -4,8 +4,7 @@ test:
 	cd ${module} && go test -v github.com/openopsdev/go-cli-commons/...
 
 lint:
-	go get -u golang.org/x/lint/golint
-	test -z "$$(golint ./...)"
+	golangci-lint run
 
 local-module:
 	echo "replace github.com/openopsdev/go-cli-commons/$(module) => ../go-cli-commons/$(module)" >> go.mod

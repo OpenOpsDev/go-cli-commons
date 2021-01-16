@@ -1,8 +1,7 @@
 package prompts
 
 import (
-	"fmt"
-	"os"
+	"github.com/openopsdev/go-cli-commons/logger"
 )
 
 // CLIInput -
@@ -16,15 +15,14 @@ type Prompts map[string]CLIInput
 // Answers -
 type Answers map[string]string
 
-// Run - starts the run 
+// Run - starts the run
 func (p Prompts) Run() Answers {
 	answers := Answers{}
 
 	for key, input := range p {
 		a, err := input.Run()
 		if err != nil {
-			log.Errorf("error with prompt: %v", err)
-			os.Exit(1)
+			logger.Fatal(err.Error())
 		}
 		answers[key] = a
 	}
